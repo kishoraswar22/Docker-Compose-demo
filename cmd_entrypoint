@@ -1,0 +1,20 @@
+CMD and ENTRYPOINT are both Dockerfile instructions that define what command should be executed when a container is started from your image. 
+However, they work in slightly different ways and are used for different purposes.
+CMD
+Defines the default command to run when a container starts.
+Can be easily overridden when starting a container with docker run.
+Typically used to provide default arguments or commands for an application.
+ex:
+FROM ubuntu:latest
+CMD ["echo", "Hello from Docker!"] 
+
+====
+ENTRYPOINT
+Sets the main executable for the container, making the container itself behave like that executable.
+Cannot be easily overridden when starting a container (unless using the --entrypoint flag).
+Typically used when you want to create a container that runs a specific application or service.
+ex:
+FROM ubuntu:latest
+ENTRYPOINT ["/bin/echo", "Hello"]
+
+  https://devtron.ai/blog/cmd-and-entrypoint-differences/
