@@ -1,0 +1,8 @@
+ARG
+Purpose: Defines variables that users can pass at build-time to the Dockerfile.
+Scope: Only available during the image build process, not in the running container.
+Usage:
+dockerfile
+Copy code
+ARG VERSION=1.0
+FROM myapp:${VERSION}
