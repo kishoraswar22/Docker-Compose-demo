@@ -15,3 +15,15 @@ dockerfile
 Copy code
 ENV APP_ENV=production
 CMD ["run", "$APP_ENV"]
+===
+
+You should use ARG in a Dockerfile when you need to pass variables to your build process that do not need to persist in the final image. Here are some common scenarios for using ARG:
+
+When to Use ARG
+Build-time Dependencies:
+If you need to install specific versions of dependencies or tools during the build process, you can use ARG to specify the version.
+
+dockerfile
+Copy code
+ARG NODE_VERSION=14
+FROM node:${NODE_VERSION}
